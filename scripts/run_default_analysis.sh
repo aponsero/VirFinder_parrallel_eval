@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #PBS -l select=1:ncpus=1:mem=6gb
-#PBS -l walltime=04:00:00
+#PBS -l walltime=48:00:00
 #PBS -l place=free:shared
 
 module load R

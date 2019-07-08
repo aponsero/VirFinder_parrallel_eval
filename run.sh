@@ -11,9 +11,14 @@ if [[ ! -d "$DATASET_DIR" ]]; then
     exit 1
 fi
 
-export FILE_LIST="$DATASET_DIR/list.txt"
+if [[ -f "$DIR/virFinder_list.txt" ]]; then
+    rm "virFinder_list.txt"
+fi
+
+export FILE_LIST="$DATASET_DIR/virFinder_list.txt"
 cd $DATASET_DIR
-find . -type f -name "*.fasta"> $FILE_LIST
+find . -type f -name "*.fasta">> $FILE_LIST
+find . -type f -name "*.fa">> $FILE_LIST
 export NUM_FILES=$(wc -l < "$FILE_LIST")
 
 if [[ $NUM_FILES -eq 0 ]]; then
