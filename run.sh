@@ -11,7 +11,7 @@ if [[ ! -d "$DATASET_DIR" ]]; then
     exit 1
 fi
 
-if [[ -f "$DIR/virFinder_list.txt" ]]; then
+if [[ -f "$DATASET_DIR/virFinder_list.txt" ]]; then
     rm "virFinder_list.txt"
 fi
 
